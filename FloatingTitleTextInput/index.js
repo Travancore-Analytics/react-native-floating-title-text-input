@@ -68,15 +68,12 @@ const styles                    = StyleSheet.create({
         height                  : 60
     },
     textInput                   : {
-        marginHorizontal        : 8,
-        borderRadius            : 22,
         height                  : 44,
         backgroundColor         : "#EEEEEE",
         paddingLeft             : 13
     },
     placeholder                 : {
         color                   : "#B3B3B3",
-        marginLeft              : 24,
         marginBottom            : 13
     }
 })
