@@ -1,0 +1,39 @@
+{
+  "name": "react-native-floating-title-text-input",
+  "version": "1.0.0",
+  "description": "Custom text input for react-native. When user starts to type,placeholder will move above the text input.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Travancore-Analytics/react-native-floating-title-text-input.git"
+  },
+  "keywords": [
+    "react-native",
+    "react-native-textInput",
+    "textInput",
+    "floating-label-text-input",
+    "floating-title-text-input",
+    "floating-placeholder"
+  ],
+  "dependencies": {
+    "prop-types": "^15.5.10"
+  },
+  "peerDependencies": {
+    "react": "^16.0.0-beta.5",
+    "react-native": "^0.49.1"
+  },
+  "devDependencies": {
+    "babel-jest": "22.4.4",
+    "babel-preset-react-native": "4.0.0",
+    "jest": "22.4.4"
+  },
+  "author": "Travancore Analytics",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Travancore-Analytics/react-native-floating-title-text-input/issues"
+  },
+  "homepage": "https://github.com/Travancore-Analytics/react-native-floating-title-text-input#readme"
+}
