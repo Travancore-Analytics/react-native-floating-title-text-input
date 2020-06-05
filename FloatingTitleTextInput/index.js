@@ -48,10 +48,12 @@ export default class FloatingTitleTextInput extends React.Component {
             <View style={[styles.mainView,this.props.style]} >
                 {this.renderPlaceHolderText()}
                 <TextInput
+                    value = {this.props.value ? this.props.value : ""}
                     keyboardType = {this.props.keyboardType ? this.props.keyboardType : "default" }
                     secureTextEntry = {this.props.secureTextEntry  ? this.props.secureTextEntry : false }
                     onChangeText = {(value)=>{this.onChangeText(value)}}
                     onFocus = {()=>{this.onFocus()}}
+                    multiline = {this.props.multiline ? this.props.multiline : false }
                     onBlur  = {()=>{this.onBlur()}}
                     placeholderTextColor = {this.props.placeholderTextColor ? this.props.placeholderTextColor : "#B3B3B3"}
                     placeholder = {!this.state.topPlaceholder ? this.placeholder : ""}
