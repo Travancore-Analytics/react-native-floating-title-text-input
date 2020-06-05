@@ -48,7 +48,7 @@ export default class FloatingTitleTextInput extends React.Component {
             <View style={[styles.mainView,this.props.style]} >
                 {this.renderPlaceHolderText()}
                 <TextInput
-                    value = {this.props.value ? this.props.value : ""}
+                    value = {this.props.value ? this.props.value : this.state.textString}
                     keyboardType = {this.props.keyboardType ? this.props.keyboardType : "default" }
                     secureTextEntry = {this.props.secureTextEntry  ? this.props.secureTextEntry : false }
                     onChangeText = {(value)=>{this.onChangeText(value)}}
