@@ -10,12 +10,13 @@ export default class FloatingTitleTextInput extends React.Component {
             textString       : ""
         }
         this.placeholder = this.props.placeholder ? this.props.placeholder : ""
+        this.titleText = this.props.customTitle ? this.props.customTitle : this.placeholder
     }
 
     renderPlaceHolderText = () =>{
         return(
             <Text style={[styles.placeholder,this.props.titleStyle]} >
-                {this.state.topPlaceholder ? this.placeholder : ""}
+                { this.state.topPlaceholder ? this.titleText : "" }
             </Text>
         )
     }
