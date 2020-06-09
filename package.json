@@ -1,6 +1,6 @@
 {
   "name": "react-native-floating-title-text-input",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Custom text input for react-native. When user starts to type,placeholder will move above the text input.",
   "main": "index.js",
   "scripts": {

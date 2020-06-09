@@ -46,7 +46,7 @@ export default class FloatingTitleTextInput extends React.Component {
 
     render(){
         return(
-            <View style={[styles.mainView,this.props.style]} >
+            <View style={this.props.style} >
                 {this.renderPlaceHolderText()}
                 <TextInput
                     value = {this.props.value ? this.props.value : this.state.textString}
@@ -67,9 +67,6 @@ export default class FloatingTitleTextInput extends React.Component {
 }
 
 const styles                    = StyleSheet.create({
-    mainView                    : {
-        height                  : 60
-    },
     textInput                   : {
         height                  : 44,
         backgroundColor         : "#EEEEEE",
