@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, View, TextInput, Text} from 'react-native';
+import { StyleSheet, View, TextInput, Text, Keyboard} from 'react-native';
 
 export default class FloatingTitleTextInput extends React.Component {
 
@@ -28,10 +28,14 @@ export default class FloatingTitleTextInput extends React.Component {
         }
     }
 
-    onFocus = () => {
+    focus = () =>{
+        this.textInput.focus()
+    }
+
+    onFocus = (event) => {
         this.setState({topPlaceholder:true})
         if(this.props.onFocus){
-            this.props.onFocus()
+            this.props.onFocus(event)
         }
     }
 
@@ -44,22 +48,33 @@ export default class FloatingTitleTextInput extends React.Component {
         }
     }
 
+    onSubmitEditing = () =>{
+        if(this.props.onSubmitEditing){
+            this.props.onSubmitEditing()
+        }
+        else{
+            Keyboard.dismiss()
+        }
+    }
+
     render(){
         return(
             <View style={this.props.style} >
                 {this.renderPlaceHolderText()}
                 <TextInput
+                    ref={(ref) => { this.textInput = ref; }}
+                    onSubmitEditing={()=>{this.onSubmitEditing()} }
                     value = {this.props.value ? this.props.value : this.state.textString}
                     keyboardType = {this.props.keyboardType ? this.props.keyboardType : "default" }
                     secureTextEntry = {this.props.secureTextEntry  ? this.props.secureTextEntry : false }
-                    maxLength = {this.props.maxLength ? this.props.maxLength : null}
                     onChangeText = {(value)=>{this.onChangeText(value)}}
-                    onFocus = {()=>{this.onFocus()}}
+                    onFocus = {(event)=>{this.onFocus(event)}}
                     multiline = {this.props.multiline ? this.props.multiline : false }
                     onBlur  = {()=>{this.onBlur()}}
                     placeholderTextColor = {this.props.placeholderTextColor ? this.props.placeholderTextColor : "#B3B3B3"}
                     placeholder = {!this.state.topPlaceholder ? this.placeholder : ""}
-                    style = {[styles.textInput,this.props.textInputStyle]} 
+                    style = {[styles.textInput,this.props.textInputStyle]}
+                    blurOnSubmit={this.props.blurOnSubmit ? this.props.blurOnSubmit : false} 
                 />
             </View>
         )
