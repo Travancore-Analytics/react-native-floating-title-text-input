@@ -74,6 +74,7 @@ export default class FloatingTitleTextInput extends React.Component {
                     onBlur  = {()=>{this.onBlur()}}
                     placeholderTextColor = {this.props.placeholderTextColor ? this.props.placeholderTextColor : "#B3B3B3"}
                     placeholder = {!this.state.topPlaceholder ? this.placeholder : ""}
+                    maxLength = {this.props.maxLength ? this.props.maxLength : null}
                     style = {[styles.textInput,this.props.textInputStyle]}
                     blurOnSubmit={this.props.blurOnSubmit ? this.props.blurOnSubmit : false} 
                 />
