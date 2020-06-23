@@ -63,6 +63,7 @@ export default class FloatingTitleTextInput extends React.Component {
                 {this.renderPlaceHolderText()}
                 <TextInput
                     ref={(ref) => { this.textInput = ref; }}
+                    returnKeyType={this.props.returnKeyType ? this.props.returnKeyType : null}
                     onSubmitEditing={()=>{this.onSubmitEditing()} }
                     value = {this.props.value ? this.props.value : this.state.textString}
                     keyboardType = {this.props.keyboardType ? this.props.keyboardType : "default" }
@@ -73,6 +74,7 @@ export default class FloatingTitleTextInput extends React.Component {
                     onBlur  = {()=>{this.onBlur()}}
                     placeholderTextColor = {this.props.placeholderTextColor ? this.props.placeholderTextColor : "#B3B3B3"}
                     placeholder = {!this.state.topPlaceholder ? this.placeholder : ""}
+                    maxLength = {this.props.maxLength ? this.props.maxLength : null}
                     style = {[styles.textInput,this.props.textInputStyle]}
                     blurOnSubmit={this.props.blurOnSubmit ? this.props.blurOnSubmit : false} 
                 />
