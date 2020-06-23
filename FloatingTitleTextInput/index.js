@@ -63,6 +63,7 @@ export default class FloatingTitleTextInput extends React.Component {
                 {this.renderPlaceHolderText()}
                 <TextInput
                     ref={(ref) => { this.textInput = ref; }}
+                    returnKeyType={this.props.returnKeyType ? this.props.returnKeyType : null}
                     onSubmitEditing={()=>{this.onSubmitEditing()} }
                     value = {this.props.value ? this.props.value : this.state.textString}
                     keyboardType = {this.props.keyboardType ? this.props.keyboardType : "default" }
